@@ -19,11 +19,13 @@ public class Program5 {
 		System.out.print("Quantas aulas tem o curso? ");
 		int lessons = sc.nextInt();
 		sc.nextLine();
+		System.out.println();
 		
 		for(int i=1; i <= lessons; i++) {
 			System.out.print("Dados da "+ i + "a aula:");
 			System.out.print("Conteúdo ou tarefa (c/t)? ");
 			char answer = sc.next().charAt(0);
+			sc.nextLine();
 			System.out.print("Título: ");
 			String title = sc.nextLine();
 			
@@ -47,15 +49,15 @@ public class Program5 {
 				
 				list.add(new Task(title, description, questions));
 			}
-			
-			int totalDuration = 0;
-			
-			for(Lesson lesson : list) {
-				totalDuration += lesson.duration();
-			}
-			
-			System.out.print("DURAÇÃO TOTAL DO CURSO = " + totalDuration);
 		}
+		
+		int totalDuration = 0;
+		
+		for(Lesson lesson : list) {
+			totalDuration += lesson.duration();
+		}
+		
+		System.out.print("DURAÇÃO TOTAL DO CURSO = " + totalDuration + " segundos");
 		
 		sc.close();
 	}
